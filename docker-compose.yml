@@ -1,0 +1,34 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:6-apache
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('MAILEXAM_LOGIN', getenv('MAILEXAM_LOGIN') ?: '');
+        define('MAILEXAM_PASSWORD', getenv('MAILEXAM_PASSWORD') ?: '');
+        define('MAILEXAM_PORT', (int) (getenv('MAILEXAM_PORT') ?: 587));
+        define('MAIL_FROM', getenv('MAIL_FROM') ?: 'noreply@example.test');
+    volumes:
+      - ./wp-content/mu-plugins:/var/www/html/wp-content/mu-plugins
+    depends_on:
+      - db
+
+volumes:
+  db_data:
