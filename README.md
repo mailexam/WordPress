@@ -1,6 +1,6 @@
 # WordPress + Mailexam
 
-Minimal [WordPress](https://wordpress.org/) example that sends test mail through [Mailexam](https://mailexam.ru/) SMTP via `wp_mail()` and a must-use plugin.
+Minimal [WordPress](https://wordpress.org/) example that sends test mail through [Mailexam](https://mailexam.io/) SMTP via `wp_mail()` and a must-use plugin.
 
 Based on the [Mailexam WordPress guide](https://wiki.mailexam.ru/en/examples/wordpress/).
 
@@ -15,7 +15,7 @@ From your Mailexam welcome email or dashboard:
 |----------|-------------|
 | `MAILEXAM_LOGIN` | SMTP login (for example, `xxxxx`) |
 | `MAILEXAM_PASSWORD` | SMTP password (paired with the login) |
-| Host | `{MAILEXAM_LOGIN}.mailexam.ru` (set in the MU plugin) |
+| Host | `{MAILEXAM_LOGIN}.mailexam.io` (set in the MU plugin) |
 
 ## Quick start (host)
 
@@ -58,7 +58,7 @@ wp eval "var_export(wp_mail('user@example.test', 'Check', 'Hello from WordPress'
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `MAILEXAM_LOGIN` | yes | — | SMTP login; host becomes `{login}.mailexam.ru` |
+| `MAILEXAM_LOGIN` | yes | — | SMTP login; host becomes `{login}.mailexam.io` |
 | `MAILEXAM_PASSWORD` | yes | — | SMTP password |
 | `MAILEXAM_PORT` | no | `587` | SMTP port (`587`, `2525`, `465`, or `25`) |
 | `MAIL_FROM` | no | `noreply@example.test` | Sender address |
@@ -109,7 +109,7 @@ variables:
   MAIL_FROM: "noreply@example.test"
 ```
 
-After sending a message in a test, verify delivery via the [Mailexam API](https://mailexam.ru/api).
+After sending a message in a test, verify delivery via the [Mailexam API](https://mailexam.io/api).
 
 ## Troubleshooting
 
@@ -120,7 +120,7 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 
 **TLS or authentication failed**
 
-- Host must be `{login}.mailexam.ru`, username the same login from the email.
+- Host must be `{login}.mailexam.io`, username the same login from the email.
 - Login and password must come from the same Mailexam project.
 
 **REST endpoint returns 404**
@@ -138,4 +138,4 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 - [Mailexam WordPress guide (wiki)](https://wiki.mailexam.ru/en/examples/wordpress/)
 - [Laravel](https://github.com/mailexam/Laravel), [Symfony](https://github.com/mailexam/Symfony), [Phalcon](https://github.com/mailexam/Phalcon) — other PHP stacks
 - [wp_mail()](https://developer.wordpress.org/reference/functions/wp_mail/)
-- [Mailexam API documentation](https://mailexam.ru/api)
+- [Mailexam API documentation](https://mailexam.io/api)

@@ -13,7 +13,7 @@ add_action('phpmailer_init', static function ($phpmailer): void {
     $port = defined('MAILEXAM_PORT') ? (int) MAILEXAM_PORT : 587;
 
     $phpmailer->isSMTP();
-    $phpmailer->Host = $login . '.mailexam.ru';
+    $phpmailer->Host = $login . '.mailexam.io';
     $phpmailer->Port = $port;
     $phpmailer->SMTPAuth = true;
     $phpmailer->Username = $login;
