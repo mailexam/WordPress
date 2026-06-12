@@ -139,3 +139,7 @@ After sending a message in a test, verify delivery via the [Mailexam API](https:
 - [Laravel](https://github.com/mailexam/Laravel), [Symfony](https://github.com/mailexam/Symfony), [Phalcon](https://github.com/mailexam/Phalcon) — other PHP stacks
 - [wp_mail()](https://developer.wordpress.org/reference/functions/wp_mail/)
 - [Mailexam API documentation](https://mailexam.io/api)
+
+## License
+
+Apache 2.0
